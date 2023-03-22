@@ -4,6 +4,7 @@ class Solution2 {
 	int[] func_a(int[] arr) {
 		int[] counter = new int[1001];
 		for (int i = 0; i < arr.length; i++) {
+			// 자연수의 개수 구하기
 			counter[arr[i]]++;
 		}
 		return counter;
@@ -24,7 +25,8 @@ class Solution2 {
 		final int INF = 1001;
 		int ret = INF;
 		for (int i = 0; i < arr.length; i++) {
-			if(arr[i] != 0 && ret > arr[i]) {
+			// arr[i]가 0이면 안됨, 최솟값 구하기
+			if (arr[i] != 0 && ret > arr[i]) {
 				ret = arr[i];
 			}
 		}
@@ -33,6 +35,7 @@ class Solution2 {
 
 	public int solutoin2(int[] arr) {
 		int counter[] = func_a(arr);
+		// func_b와 func_c에 counter 값 넣기
 		int maxCnt = func_b(counter);
 		int minCnt = func_c(counter);
 		return maxCnt / minCnt;
